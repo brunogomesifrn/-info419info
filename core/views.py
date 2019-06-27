@@ -12,4 +12,4 @@ def perfil(request):
 def cadastrartipo(request):
 	return render(request, 'cadastrartipo.html')
 def produtos(request):
-	return render(request, 'perfilprodutos.html')
+	return render(request, 'produtos.html')
