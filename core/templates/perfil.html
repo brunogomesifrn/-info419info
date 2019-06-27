@@ -5,7 +5,7 @@
 {% block conteudo %}
 <h1 class="centro">PERFIL:</h1>
 <h2>Olá, Username</h2> <br />
-<button type="button" class="btn btn-success"><a href="#" class="text-white">Editar Dados </a></button> <br /> <br />
-<button type="button" class="btn btn-primary"><a href="{% url 'tipos' %}" class="text-white">Tipos </a></button> <br /> <br />
-<button type="button" class="btn btn-primary"><a href="{% url 'produtos' %}" class="text-white">Produtos  </a></button>
+<a href="#" class="text-white"> <button type="button" class="btn btn-success">Editar Dados</button> </a><br /> <br />
+<a href="{% url 'tipos' %}" class="text-white"><button type="button" class="btn btn-primary">Tipos</button> </a><br /> <br />
+<a href="{% url 'produtos' %}" class="text-white"> <button type="button" class="btn btn-primary">Produtos</button> </a>
 {% endblock %}
