@@ -7,3 +7,5 @@ def index(request):
 	return render(request, 'index.html')
 def cadastro(request):
 	return render(request, 'cadastro.html')
+def perfil(request):
+	return render(request, 'perfil.html')
