@@ -9,6 +9,8 @@ def cadastro(request):
 	return render(request, 'cadastro.html')
 def perfil(request):
 	return render(request, 'perfil.html')
+def tipos(request):
+	return render(request, 'tipos.html')
 def cadastrartipo(request):
 	return render(request, 'cadastrartipo.html')
 def produtos(request):
