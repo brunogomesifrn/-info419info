@@ -15,3 +15,6 @@ def cadastrartipo(request):
 	return render(request, 'cadastrartipo.html')
 def produtos(request):
 	return render(request, 'produtos.html')
+def produto(request):
+	return render(request, 'produto.html')
+
