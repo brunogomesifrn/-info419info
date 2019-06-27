@@ -11,3 +11,5 @@ def perfil(request):
 	return render(request, 'perfil.html')
 def cadastrartipo(request):
 	return render(request, 'cadastrartipo.html')
+def produtos(request):
+	return render(request, 'perfilprodutos.html')
