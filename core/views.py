@@ -7,3 +7,6 @@ def index(request):
 	return render(request, 'index.html')
 def cadastro(request):
 	pass
+	pass
+def cadastrar(request):
+	return render(request, 'cadastro.html')
