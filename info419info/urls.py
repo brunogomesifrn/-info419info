@@ -24,5 +24,5 @@ urlpatterns = [
     path('login/', login, name="login"),
     path('cadastrar/', cadastro, name="cadastro"),
     path('perfil/', perfil, name="perfil"),
-    path('perfil/cadastrartipo/', cadastrartipo, name="cadastrartipo"),
+    path('perfil/tipo/cadastrar', cadastrartipo, name="cadastrartipo"),
 ]
