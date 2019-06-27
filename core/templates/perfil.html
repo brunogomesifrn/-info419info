@@ -4,8 +4,9 @@
 {% endblock %}
 {% block conteudo %}
 <h1 class="centro">PERFIL:</h1>
-<h2>Olá, Username</h2> <br />
-<a href="#" class="text-white"> <button type="button" class="btn btn-success">Editar Dados</button> </a><br /> <br />
+<h2>Olá, {{user.username}}</h2> <br />
+<a href="{% url 'editarperfil' user.id %}" class="text-white"> <button type="button" class="btn btn-success">Editar Dados</button> </a><br /> <br />
 <a href="{% url 'tipos' %}" class="text-white"><button type="button" class="btn btn-primary">Tipos</button> </a><br /> <br />
-<a href="{% url 'produtos' %}" class="text-white"> <button type="button" class="btn btn-primary">Produtos</button> </a>
+<a href="{% url 'produtos' %}" class="text-white"> <button type="button" class="btn btn-primary">Produtos</button> </a> <br> <br>
+<a href="{% url 'logout' %}" class="text-white"> <button type="button" class="btn btn-success">SAIR</button> </a><br /> <br />
 {% endblock %}

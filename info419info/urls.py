@@ -15,17 +15,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core.views import index, listaprodutos, produtoespecifico, login, cadastro, perfil, tipos, cadastrartipo, produtos, produto
-
+from core.views import index, listaprodutos, produtoespecifico, cadastro, perfil, editarperfil, tipos, cadastrartipo, produtos, produto
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name="index"),
     path('produtos/', listaprodutos, name="listaprodutos"),
     path('produtos/<int:id>/', produtoespecifico, name="produtoespecifico"),
-    path('login/', login, name="login"),
+    path('login/', auth_views.LoginView.as_view(), name="login"),
+    path("logout/", auth_views.LogoutView.as_view(), name="logout"),
     path('cadastrar/', cadastro, name="cadastro"),
     path('perfil/', perfil, name="perfil"),
+    path('perfil/editar/<int:id>', editarperfil, name="editarperfil"),
     path('perfil/tipos/', tipos, name="tipos"),
     path('perfil/tipos/cadastrar', cadastrartipo, name="cadastrartipo"),
     path('perfil/produtos', produtos, name="produtos"),

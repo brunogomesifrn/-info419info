@@ -1,20 +1,25 @@
 {% extends "base.html" %}
+
+{% load widget_tweaks %}
+
+
 {% block title %}
 <title>LOGIN</title>
 {% endblock %}
 {% block conteudo %}
 <h1 class="centro">Login:</h1>
-<form>
+<form method="post">
+  {% csrf_token %}
   <div class="form-group">
     <label for="exampleInputEmail1">Username</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu login">
+    {{ form.username | add_class:"form-control"}}
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Senha</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
+    {{ form.password| add_class:"form-control"}}
   </div>
   <div class="form-group form-check">
   </div>
-  <button type="submit" class="btn btn-primary">Enviar</button>
+  <button type="submit" class="btn btn-primary">Login</button>
 </form>
 {% endblock %}
