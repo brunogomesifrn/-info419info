@@ -15,12 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+<<<<<<< HEAD
 from core.views import index, login, cadastro, perfil
+=======
+from core.views import index, login, cadastro, cadastrartipo
+>>>>>>> 134f8fb26abc924f59b9d942045b8d106e17a00f
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name="index"),
     path('login/', login, name="login"),
     path('cadastrar/', cadastro, name="cadastro"),
+<<<<<<< HEAD
     path('perfil/', perfil, name="perfil"),
+=======
+    path('cadastrartipo/', cadastrartipo, name="cadastrartipo"),
+>>>>>>> 134f8fb26abc924f59b9d942045b8d106e17a00f
 ]
