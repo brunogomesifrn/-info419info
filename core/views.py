@@ -5,5 +5,5 @@ def login(request):
 	return render(request, 'login.html')
 def index(request):
 	pass
-def cadastro(request):
-	pass
+def cadastrar(request):
+	return render(request, 'cadastro.html')
