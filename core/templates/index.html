@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-
 {% block title %}
 <title>INFO</title>
 {% endblock %}
@@ -29,10 +28,10 @@
   		<a class="nav-link" href="#">Produtos</a>
   	</li>
   	<li class="nav-item">
-  		<a class="nav-link" href="#">Login</a>
+  		<a class="nav-link" href="{% url 'login' %}">Login</a>
   	</li>
   	<li class="nav-item">
-  		<a class="nav-link" href="#">Cadastre-se</a>
+  		<a class="nav-link" href="{% url 'cadastro' %}">Cadastre-se</a>
   	</li>
   </ul>
 </div>
