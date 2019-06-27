@@ -19,4 +19,5 @@ def produtos(request):
 	return render(request, 'produtos.html')
 def produto(request):
 	return render(request, 'produto.html')
-
+def produtoespecifico(request, id):
+	return render(request, 'nomeproduto.html')
