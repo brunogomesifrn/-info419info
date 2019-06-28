@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block title %}
 <title>Cadastrar Tipo</title>
 
@@ -17,5 +17,7 @@
   <button type="submit" class="btn btn-primary">Cadastrar Tipo</button>
 </form>
 
+<script type="text/javascript" src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
 
 {% endblock %}
