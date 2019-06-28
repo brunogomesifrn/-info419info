@@ -4,6 +4,10 @@ from django.db import models
 class Tipo (models.Model):
 	tipo = models.CharField('tipo', max_length=100)
 
+	def __str__(self):
+		return self.tipo
+
+
 class Produtos (models.Model):
 	produto = models.CharField('produtos', max_length=100)
 	nome = models.CharField('nome', max_length=100)
