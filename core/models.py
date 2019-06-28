@@ -9,10 +9,9 @@ class Tipo (models.Model):
 
 
 class Produtos (models.Model):
-	produto = models.CharField('produtos', max_length=100)
 	nome = models.CharField('nome', max_length=100)
 	preco = models.FloatField('preco', max_length=100)
-	descricao = models.CharField('descricao', max_length=100)
+	descricao = models.CharField('descricao', max_length=1000)
 	quantidade = models.IntegerField('quantidade')
 	imagem = models.ImageField('imagem', upload_to='img')
 	tipo = models.ForeignKey(Tipo, on_delete=models.CASCADE)

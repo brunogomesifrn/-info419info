@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load widget_tweaks %}
 {% block title %}
 <title>Cadastrar Produto</title>
 
@@ -15,56 +16,43 @@
 
       <h3>Cadastro:</h3>
           
-        <form  action="admin_cursos.html" method="POST">
+        <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
           <div class="control-group form-group">
             <div class="controls">
-              <label>Nome:</label>
-              <input type="text" class="form-control" name="at1" required>
+              {{form.nome.label}}: {{form.nome | add_class:"form-control"}} 
               <p class="help-block"></p>
             </div>
           </div>
 
           <div class="control-group form-group">
             <div class="controls">
-              <label>Preço:</label>
-              <input type="number" class="form-control" name="at2" required>
+              {{form.preco.label}}: {{form.preco | add_class:"form-control"}} 
             </div>
           </div>
 
           <div class="control-group form-group">
             <div class="controls">
-              <label>Descrição:</label>
-              <textarea class="form-control"> </textarea>
+              {{form.descricao.label}}:
+              <textarea class="form-control" {{form.descricao | add_class:"form-control"}} </textarea>
+            </div>
+          </div>
+
+           <div class="control-group form-group">
+            <div class="controls">
+              {{form.quantidade.label}}: {{form.quantidade | add_class:"form-control"}} 
             </div>
           </div>
 
           <div class="control-group form-group">
             <div class="controls">
-              <label>Imagem:</label>
-              <input type="file" class="form-control" name="at2" required>
+              {{form.imagem.label}}: {{form.imagem | add_class:"form-control"}} 
             </div>
           </div>
 
-          <div class="control-group form-group">
-            <div class="controls">
-              <label>Quantidade:</label>
-              <input type="number" class="form-control" name="at2" required>
-            </div>
-          </div>
 
           <div class="control-group form-group">
-            <div class="form-check">
-            <input class="form-check-input position-static" type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="..."> Tipo1
-        </div>
-        <div class="form-check">
-            <input class="form-check-input position-static" type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="..."> Tipo2
-        </div>
-        <div class="form-check">
-            <input class="form-check-input position-static" type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="..."> Tipo3
-        </div>
-        <div class="form-check">
-            <input class="form-check-input position-static" type="radio" name="blankRadio" id="blankRadio1" value="option1" aria-label="..."> Tipo4
-        </div>
+            {{form.tipo.label}}: {{form.tipo | add_class:"form-control"}} 
           </div>
 
           <br />
