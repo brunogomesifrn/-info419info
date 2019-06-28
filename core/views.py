@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
-from .models import Tipo
+from .models import Tipo, Produtos
 from .forms import TipoForm
 
 # Create your views here.
@@ -58,7 +58,11 @@ def cadastrartipo(request):
 	return render(request, 'cadastrartipo.html', contexto)
 @login_required
 def produtos(request):
-	return render(request, 'produtos.html')
+	produtos = Produtos.objects.all()
+	contexto = {
+	'produto': produtos
+	}
+	return render(request, 'produtos.html', contexto)
 @login_required
 def produto(request):
 	return render(request, 'produto.html')

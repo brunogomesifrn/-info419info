@@ -10,11 +10,13 @@
 
 <a href="{% url 'produto' %}" class="text-white"><button type="button" class="btn btn-primary">Cadastrar Produto</button></a>
 	<br /> <br />
+	{% for produto in produto %}
     <ul>
-      <li>Produto 1</li>
-      <li>produto 2</li>
+      <li>{{produto.nome}}</li>
     </ul>
-
+    {% empty%}
+    <p>Nenhum produto cadastrado</p>
+    {% endfor %}
 <script type="text/javascript" src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
 
