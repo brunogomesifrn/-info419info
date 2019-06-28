@@ -2,12 +2,18 @@
 
 {% load widget_tweaks %}
 
+{% load static %}
 
 {% block title %}
 <title>LOGIN</title>
 {% endblock %}
 {% block conteudo %}
 <h1 class="centro">Login:</h1>
+{% if form.errors %}
+    <div class="alert alert-danger">
+        <strong>Username e/ou Senha inválidos!</strong>
+    </div>
+{% endif %}
 <form method="post">
   {% csrf_token %}
   <div class="form-group">
@@ -22,4 +28,7 @@
   </div>
   <button type="submit" class="btn btn-primary">Login</button>
 </form>
+
+<script type="text/javascript" src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
 {% endblock %}
