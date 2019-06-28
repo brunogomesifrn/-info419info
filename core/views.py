@@ -80,6 +80,22 @@ def produtos(request):
 	}
 	return render(request, 'produtos.html', contexto)
 @login_required
+def editarprodutos(request, id):
+	produtos = Produtos.objects.get(pk=id)
+	form = ProdutosForm(request.POST or None, request.FILES or None, instance=produtos)
+	if form.is_valid():
+		form.save()
+		return redirect('/perfil/produtos')
+	contexto = {
+	'form': form
+	}
+	return render(request, 'produto.html', contexto)
+@login_required
+def apagarprodutos(request, id):
+	produtos = Produtos.objects.get(pk=id)
+	produtos.delete()
+	return redirect('/perfil/produtos')
+@login_required
 def produto(request):
 	form = ProdutosForm(request.POST or None, request.FILES or None)
 	if form.is_valid():

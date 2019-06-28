@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from core.views import index, listaprodutos, produtoespecifico, cadastro, perfil, editarperfil, tipos, editartipo, apagartipo, cadastrartipo, produtos, produto
+from core.views import index, listaprodutos, produtoespecifico, cadastro, perfil, editarperfil, tipos, editartipo, apagartipo, cadastrartipo, produtos, editarprodutos, apagarprodutos, produto
 from django.contrib.auth import views as auth_views
 from django.conf import settings
 from django.conf.urls.static import static
@@ -35,5 +35,7 @@ urlpatterns = [
     path('perfil/tipos/apagar/<int:id>/', apagartipo, name="apagartipo"),
     path('perfil/tipos/cadastrar', cadastrartipo, name="cadastrartipo"),
     path('perfil/produtos', produtos, name="produtos"),
+    path('perfil/produtos/editar/<int:id>/', editarprodutos, name="editarprodutos"),
+    path('perfilprodutos/apagar/<int:id>/', apagarprodutos, name="apagarprodutos"),
     path('perfil/produtos/cadastrar', produto, name="produto"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

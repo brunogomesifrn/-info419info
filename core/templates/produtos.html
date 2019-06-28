@@ -10,14 +10,26 @@
 
 <a href="{% url 'produto' %}" class="text-white"><button type="button" class="btn btn-primary">Cadastrar Produto</button></a>
 	<br /> <br />
-	{% for produto in produto %}
-    <ul>
-      <li>{{produto.nome}}</li>
-      <li>{{produto.descricao}}</li>
-    </ul>
-    {% empty%}
-    <p>Nenhum produto cadastrado</p>
-    {% endfor %}
+
+    <table>
+    	<tr>
+    		<th>Nome:</th>
+    		<th>Descrição:</th>
+    		<th>Gerenciar:</th>
+    	</tr>
+    	{% for produto in produto %}
+    	<tr>
+    		<td>{{produto.nome}}</td>
+    		<td>{{produto.descricao}}</td>
+    		<td><a href="{% url 'editarprodutos' produto.id %}" class="text-white"><button type="button" class="btn btn-primary">Editar Produto</button></a>
+    			<a href="{% url 'apagarprodutos' produto.id %}" class="text-white"><button type="button" class="btn btn-primary">Apagar Produto</button></a>
+    		</td>
+    	</tr>
+    	{% empty %}
+    	<p>Nenhum produto cadastrado</p>
+    	{% endfor%}
+    </table>
+    
 <script type="text/javascript" src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
 
