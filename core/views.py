@@ -21,7 +21,11 @@ def cadastro(request):
 	return render(request, 'cadastro.html', contexto)
 @login_required
 def perfil(request):
-	return render(request, 'perfil.html')
+	usuario = User.objects.all().order_by('id')[:1]
+	contexto = {
+	'usuario': usuario
+	}
+	return render(request, 'perfil.html', contexto)
 @login_required
 def editarperfil(request,id):
 	user = User.objects.get(pk=id)

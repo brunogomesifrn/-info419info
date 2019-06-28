@@ -9,4 +9,7 @@
 <a href="{% url 'tipos' %}" class="text-white"><button type="button" class="btn btn-primary">Tipos</button> </a><br /> <br />
 <a href="{% url 'produtos' %}" class="text-white"> <button type="button" class="btn btn-primary">Produtos</button> </a> <br> <br>
 <a href="{% url 'logout' %}" class="text-white"> <button type="button" class="btn btn-success">SAIR</button> </a><br /> <br />
+{% for usuario in usuario %}
+<p>{{usuario.username}}</p>
+{% endfor %}
 {% endblock %}
