@@ -7,13 +7,13 @@
 <h1>Tipos:</h1>
     <a href="{% url 'cadastrartipo' %}" class="text-white"><button type="button" class="btn btn-primary">Cadastrar</button></a>
     <br /> <br />
+    {% for nome in tipo %}
     <ul>
-      <li>Tipo1</li>
-      <li>Tipo2</li>
-      <li>Tipo3</li>
-      <li>Tipo4</li>
+      <li>{{nome.tipo}}</li>
     </ul>
-
+    {% empty %}
+    <p>Nenhum tipo cadastrado</p>
+    {% endfor %}
     <script type="text/javascript" src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
 
