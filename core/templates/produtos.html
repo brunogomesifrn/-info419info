@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block title %}
 <title>Perfil Produtos</title>
 
@@ -15,5 +15,7 @@
       <li>produto 2</li>
     </ul>
 
+<script type="text/javascript" src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
 
 {% endblock %}
