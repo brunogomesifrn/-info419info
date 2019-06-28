@@ -57,6 +57,22 @@ def cadastrartipo(request):
 	}
 	return render(request, 'cadastrartipo.html', contexto)
 @login_required
+def editartipo(request, id):
+	tipo = Tipo.objects.get(pk=id)
+	form = TipoForm(request.POST or None, instance=tipo)
+	if form.is_valid():
+		form.save()
+		return redirect('/perfil/tipos')
+	contexto = {
+	'form': form
+	}
+	return render(request, 'cadastrartipo.html', contexto)
+@login_required
+def apagartipo(request, id):
+	tipo = Tipo.objects.get(pk=id)
+	tipo.delete()
+	return redirect('/perfil/tipos')
+@login_required
 def produtos(request):
 	produtos = Produtos.objects.all()
 	contexto = {

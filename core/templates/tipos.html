@@ -7,13 +7,22 @@
 <h1>Tipos:</h1>
     <a href="{% url 'cadastrartipo' %}" class="text-white"><button type="button" class="btn btn-primary">Cadastrar</button></a>
     <br /> <br />
-    {% for nome in tipo %}
-    <ul>
-      <li>{{nome.tipo}}</li>
-    </ul>
+    <table>
+        <tr>
+            <th>Nome:</th>
+            <th>Gerenciar:</th>
+        </tr>
+        {% for nome in tipo %}
+        <tr>
+            <td>{{nome.tipo}}</td>
+            <td><a href="{% url 'editartipo' nome.id %}" class="text-white"><button type="button" class="btn btn-primary">Editar</button></a>
+            <a href="{% url 'apagartipo' nome.id %}" class="text-white"><button type="button" class="btn btn-primary">Apagar</button></a>
+            </td>
+        </tr>
     {% empty %}
     <p>Nenhum tipo cadastrado</p>
     {% endfor %}
+    </table>
     <script type="text/javascript" src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
 
