@@ -5,10 +5,10 @@
 {% block conteudo %}
 <h1 class="centro">PERFIL:</h1>
 <h2>Olá, {{user.username}}</h2> <br />
-<a href="{% url 'editarperfil' user.id %}" class="text-white"> <button type="button" class="btn btn-success">Editar Dados</button> </a><br /> <br />
-<a href="{% url 'tipos' %}" class="text-white"><button type="button" class="btn btn-primary">Tipos</button> </a><br /> <br />
-<a href="{% url 'produtos' %}" class="text-white"> <button type="button" class="btn btn-primary">Produtos</button> </a> <br> <br>
-<a href="{% url 'logout' %}" class="text-white"> <button type="button" class="btn btn-success">SAIR</button> </a><br /> <br />
+<a href="{% url 'editarperfil' user.id %}" class="text-white"> <button type="button" class="btn btn-success w-100">Editar Dados</button> </a><br /> <br />
+<a href="{% url 'tipos' %}" class="text-white"><button type="button" class="btn btn-primary w-100">Tipos</button> </a><br /> <br />
+<a href="{% url 'produtos' %}" class="text-white"> <button type="button" class="btn btn-primary w-100">Produtos</button> </a> <br> <br>
+<a href="{% url 'logout' %}" class="text-white"> <button type="button" class="btn btn-success w-100">SAIR</button> </a><br /> <br />
 {% for usuario in usuario %}
 <p>{{usuario.username}}</p>
 {% endfor %}
