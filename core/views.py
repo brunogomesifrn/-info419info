@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from .models import Tipo
+from .forms import TipoForm
 
 # Create your views here.
 def index(request):
@@ -47,7 +48,14 @@ def tipos(request):
 	return render(request, 'tipos.html', contexto)
 @login_required
 def cadastrartipo(request):
-	return render(request, 'cadastrartipo.html')
+	form = TipoForm(request.POST or None)
+	if form.is_valid():
+		form.save()
+		return redirect('/perfil/tipos')
+	contexto = {
+	'form': form
+	}
+	return render(request, 'cadastrartipo.html', contexto)
 @login_required
 def produtos(request):
 	return render(request, 'produtos.html')
