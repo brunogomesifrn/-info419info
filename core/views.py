@@ -13,7 +13,11 @@ def index(request):
 	}
 	return render(request, 'index.html', contexto)
 def listaprodutos(request):
-	return render(request, 'listaprodutos.html')
+	produtos = Produtos.objects.all()
+	contexto = {
+	'produto': produtos
+	}
+	return render(request, 'listaprodutos.html', contexto)
 def login(request):
 	return render(request, 'login.html')
 def cadastro(request):
@@ -27,10 +31,6 @@ def cadastro(request):
 	return render(request, 'cadastro.html', contexto)
 @login_required
 def perfil(request):
-	usuario = User.objects.all().order_by('-id')[:1]
-	contexto = {
-	'usuario': usuario
-	}
 	return render(request, 'perfil.html')
 @login_required
 def editarperfil(request,id):
@@ -109,7 +109,6 @@ def produto(request):
 	'form': form
 	}
 	return render(request, 'produto.html', contexto)
-@login_required
 def produtoespecifico(request, id):
 	produtos = Produtos.objects.get(pk=id)
 	contexto = {
