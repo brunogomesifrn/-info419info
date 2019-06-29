@@ -10,8 +10,8 @@
 
 <a href="{% url 'produto' %}" class="text-white"><button type="button" class="btn btn-primary">Cadastrar Produto</button></a>
 	<br /> <br />
-{% for produto in produto %}
 <div class="row">
+  {% for produto in produto %}
     <div class="col-md-4 col-12">
         <div class="card" style="width: 18rem;">
           <img class="card-img-top img-fluid" src="/media/{{produto.imagem}}" alt="Card image cap">
@@ -27,7 +27,7 @@
     </div>
     {% empty %}
     <div class="col-12">
-        <h1 class="center">Nenhum produto cadastrado</h1>
+        <h1>Nenhum produto cadastrado</h1>
     </div>
     {% endfor%}
 </div>

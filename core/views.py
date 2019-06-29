@@ -7,7 +7,11 @@ from .forms import TipoForm, ProdutosForm
 
 # Create your views here.
 def index(request):
-	return render(request, 'index.html')
+	produtos = Produtos.objects.all().order_by('-id')[:3]
+	contexto = {
+	'produto': produtos
+	}
+	return render(request, 'index.html', contexto)
 def listaprodutos(request):
 	return render(request, 'listaprodutos.html')
 def login(request):
@@ -23,11 +27,11 @@ def cadastro(request):
 	return render(request, 'cadastro.html', contexto)
 @login_required
 def perfil(request):
-	usuario = User.objects.all().order_by('id')[:1]
+	usuario = User.objects.all().order_by('-id')[:1]
 	contexto = {
 	'usuario': usuario
 	}
-	return render(request, 'perfil.html', contexto)
+	return render(request, 'perfil.html')
 @login_required
 def editarperfil(request,id):
 	user = User.objects.get(pk=id)
@@ -107,4 +111,8 @@ def produto(request):
 	return render(request, 'produto.html', contexto)
 @login_required
 def produtoespecifico(request, id):
-	return render(request, 'nomeproduto.html')
+	produtos = Produtos.objects.get(pk=id)
+	contexto = {
+	'produto': produtos
+	}
+	return render(request, 'nomeproduto.html', contexto)

@@ -7,14 +7,14 @@
 {% block conteudo %}
 <div class="row border">
         <div class="col-md-8 col-12">
-          <img src="https://images-americanas.b2w.io/produtos/01/00/oferta/34006/0/34006099_1GG.jpg" class="img-fluid img-thumbnail imagem" />
+          <img src="/media/{{produto.imagem}}" class="img-fluid" />
         </div>
         <div class="col-md-4 col-12 pt-4">
-          <h1>PRODUTO</h1>
-          <h2>PREÇO: R$ 500,00</h2>
-          <button type="button" class="btn btn-info">TIPO</button>
+          <h1>{{produto.nome}}</h1>
+          <h2>PREÇO: R$ {{produto.preco}}</h2>
+          <button type="button" class="btn btn-info">{{produto.tipo}}</button>
           <h3>Descrição:</h3>
-          <p class="text-justify">aqui foca dshkjsdzn hybhsjk aqui foca dshkjsdzn hybhsjk aqui foca dshkjsdzn hybhsjk aqui foca dshkjsdzn hybhsjk aqui foca dsh</p>
+          <p class="text-justify">{{produto.descricao}}</p>
           <button type="button" class="btn btn-primary">COMPRAR</button>
         </div>
       </div>
