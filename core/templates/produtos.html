@@ -10,7 +10,7 @@
 
 <a href="{% url 'produto' %}" class="text-white"><button type="button" class="btn btn-primary">Cadastrar Produto</button></a>
 	<br /> <br />
-
+<!--
     <table>
     	<tr>
     		<th>Nome:</th>
@@ -29,6 +29,28 @@
     	<p>Nenhum produto cadastrado</p>
     	{% endfor%}
     </table>
+-->
+{% for produto in produto %}
+<div class="row">
+    <div class="col-md-4 col-12">
+        <div class="card" style="width: 18rem;">
+          <img class="card-img-top img-fluid" src="/media/{{produto.imagem}}" alt="Card image cap">
+          <div class="card-body">
+            <h4 class="card-title">{{produto.nome}}</h4>
+            <p class="card-text">{{produto.tipo}}</p>
+            <h5 class="card-title">R$ {{produto.preco}}</h5>
+            <p class="card-text">{{produto.descricao}}</p>
+            <p class="card-text">Quantidade: {{produto.quantidade}}</p>
+            <a href="{% url 'editarprodutos' produto.id %}" class="btn btn-primary">Editar Produto</a> <br> <br> <a href="{% url 'apagarprodutos' produto.id %}" class="btn btn-primary">Apagar Produto</a>
+          </div>
+      </div>
+    </div>
+    {% empty %}
+    <div class="col-12">
+        <h1 class="center">Nenhum produto cadastrado</h1>
+    </div>
+    {% endfor%}
+</div>
     
 <script type="text/javascript" src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
