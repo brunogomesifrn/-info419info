@@ -7,18 +7,24 @@
 <h1>Tipos:</h1>
     <a href="{% url 'cadastrartipo' %}" class="text-white"><button type="button" class="btn btn-primary">Cadastrar</button></a>
     <br /> <br />
-    <table>
+    <table class="table">
+        <thead class="thead-dark">
         <tr>
+            <th>#</th>
             <th>Nome:</th>
             <th>Gerenciar:</th>
         </tr>
+    </thead>
+    <tbody>
         {% for nome in tipo %}
         <tr>
+            <td>{{nome.id}}</td>
             <td>{{nome.tipo}}</td>
             <td><a href="{% url 'editartipo' nome.id %}" class="text-white"><button type="button" class="btn btn-primary">Editar</button></a>
             <a href="{% url 'apagartipo' nome.id %}" class="text-white"><button type="button" class="btn btn-primary">Apagar</button></a>
             </td>
         </tr>
+    </tbody>
     {% empty %}
     <p>Nenhum tipo cadastrado</p>
     {% endfor %}
