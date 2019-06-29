@@ -10,26 +10,6 @@
 
 <a href="{% url 'produto' %}" class="text-white"><button type="button" class="btn btn-primary">Cadastrar Produto</button></a>
 	<br /> <br />
-<!--
-    <table>
-    	<tr>
-    		<th>Nome:</th>
-    		<th>Descrição:</th>
-    		<th>Gerenciar:</th>
-    	</tr>
-    	{% for produto in produto %}
-    	<tr>
-    		<td>{{produto.nome}}</td>
-    		<td>{{produto.descricao}}</td>
-    		<td><a href="{% url 'editarprodutos' produto.id %}" class="text-white"><button type="button" class="btn btn-primary">Editar Produto</button></a>
-    			<a href="{% url 'apagarprodutos' produto.id %}" class="text-white"><button type="button" class="btn btn-primary">Apagar Produto</button></a>
-    		</td>
-    	</tr>
-    	{% empty %}
-    	<p>Nenhum produto cadastrado</p>
-    	{% endfor%}
-    </table>
--->
 {% for produto in produto %}
 <div class="row">
     <div class="col-md-4 col-12">
